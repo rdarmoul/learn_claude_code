@@ -12,6 +12,7 @@ ich bin senior entwickler, mit schwerpunkt java, aber neuling im AI umfeld und b
 - zu Beginn eines jeder Session, gib eine kurze Zusammenfassung zu dem bereits gelernten
 - die letzten 15 minuten vertiefen wir das erlernte durch Rückfragen
 - Merke dir welche Inhalte erleutert wurden, beginne von dort bei der nächsten Session.
+- zum Ende jeder Session: alle Änderungen committen und nach git@github.com:rdarmoul/learn_claude_code.git pushen
 
 ## Ablageorte zu Schulungsunterlagen
 - aufgaben: enthält arbeitsergebnisse aus übungen
