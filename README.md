@@ -60,7 +60,7 @@ Schulungsunterlagen für einen strukturierten, praxisorientierten Einstieg in Cl
 
 ---
 
-## Lernblock 5: Vertiefung — Profi-Level (LE 23–26)
+## Lernblock 5: Vertiefung — Profi-Level (LE 24–28)
 > Ziel: Fortgeschrittene Themen für den AI-Architekten
 
 | LE  | Thema | Datei | Status |
@@ -68,7 +68,8 @@ Schulungsunterlagen für einen strukturierten, praxisorientierten Einstieg in Cl
 | 24 | Multi-Agent Systeme vertieft | [le24_multi_agent_vertieft.md](le24_multi_agent_vertieft.md) | offen |
 | 25 | RAG vertieft (Chunking, Reranking, Evaluation) | [le25_rag_vertieft.md](le25_rag_vertieft.md) | offen |
 | 26 | Fine-tuning: Wann und Wie | [le26_fine_tuning.md](le26_fine_tuning.md) | offen |
-| 27 | Wiederholung & nächste Schritte | [le27_wiederholung.md](le27_wiederholung.md) | offen |
+| 27 | Claude Code vs. GitHub Copilot — Tiefgehender CLI-Vergleich | [le27_claude_vs_copilot.md](le27_claude_vs_copilot.md) | offen |
+| 28 | Wiederholung & nächste Schritte | [le28_wiederholung.md](le28_wiederholung.md) | offen |
 
 ---
 
@@ -79,9 +80,9 @@ Block 1 (Sofort produktiv):  ████░░░░░░   2/6  ( 33%)
 Block 2 (Grundlagen):        ███████░░░   3/5  ( 60%)
 Block 3 (Bauen):             ░░░░░░░░░░   0/6  (  0%)
 Block 4 (Verteilen):         ░░░░░░░░░░   0/6  (  0%)
-Block 5 (Vertiefung):        ░░░░░░░░░░   0/4  (  0%)
+Block 5 (Vertiefung):        ░░░░░░░░░░   0/5  (  0%)
 
-Gesamt:                      ████░░░░░░   5/27 ( 19%)
+Gesamt:                      ████░░░░░░   5/28 ( 18%)
 ```
 
 ---
