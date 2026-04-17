@@ -8,8 +8,8 @@
 | Tag | Thema | Datei | Status | Letztes Kapitel |
 |-----|-------|-------|--------|-----------------|
 | 1 | Wie Claude funktioniert (Tokens, Context, Prompts) | [tag1_wie_ich_funktioniere.md](tag1_wie_ich_funktioniere.md) | ✓ erledigt | — |
-| 2 | Claude Code CLI & CLAUDE.md | [tag2_claude_als_werkzeug.md](tag2_claude_als_werkzeug.md) | ⏸ unterbrochen | Abschnitt 3: Tool Use — Permissions & Hooks offen |
-| 3 | Permissions & Hooks + Anthropic API | [tag3_api_grundlagen.md](tag3_api_grundlagen.md) | offen | — |
+| 2 | Claude Code CLI & CLAUDE.md | [tag2_claude_als_werkzeug.md](tag2_claude_als_werkzeug.md) | ✓ erledigt | — |
+| 3 | Architektur: Transformer, Agents, RAG, Safety | [tag3_architektur_und_grenzen.md](tag3_architektur_und_grenzen.md) | ✓ erledigt | — |
 | 4 | Tool Use & Function Calling | [tag4_tool_use.md](tag4_tool_use.md) | offen | — |
 | 5 | Agents & Multi-step Tasks | [tag5_agents.md](tag5_agents.md) | offen | — |
 | 6 | RAG — Retrieval-Augmented Generation | [tag6_rag.md](tag6_rag.md) | offen | — |
