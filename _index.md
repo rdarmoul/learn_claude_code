@@ -9,7 +9,7 @@
 | LE  | Thema | Datei | Status |
 |-----|-------|-------|--------|
 | 01 | Claude Code CLI — Erste Schritte | [le01_claude_code_cli_setup.md](le01_claude_code_cli_setup.md) | ✓ erledigt |
-| 02 | CLAUDE.md, Permissions & Hooks | [le01_claude_code_cli_setup.md](le01_claude_code_cli_setup.md) | ✓ erledigt |
+| 02 | CLAUDE.md, Permissions & Hooks | [le02_claude_md_permissions_hooks.md](le02_claude_md_permissions_hooks.md) | ✓ erledigt |
 | 03 | Java täglich: Code Review & Refactoring | [le03_java_review_refactoring.md](le03_java_review_refactoring.md) | offen |
 | 04 | Java täglich: Debugging & Testing | [le04_java_debugging_testing.md](le04_java_debugging_testing.md) | offen |
 | 05 | Legacy Code Migration | [le05_legacy_migration.md](le05_legacy_migration.md) | offen |
@@ -23,7 +23,7 @@
 | LE  | Thema | Datei | Status |
 |-----|-------|-------|--------|
 | 07 | Tokens, Context Window & Prompts | [le07_tokens_context_prompts.md](le07_tokens_context_prompts.md) | ✓ erledigt |
-| 08 | Anthropic API — Messages, Models & Kosten | [le01_claude_code_cli_setup.md](le01_claude_code_cli_setup.md) | ✓ erledigt |
+| 08 | Anthropic API — Messages, Models & Kosten | [le08_anthropic_api.md](le08_anthropic_api.md) | ✓ erledigt |
 | 09 | Transformer-Architektur & Attention | [le09_transformer_architektur.md](le09_transformer_architektur.md) | ✓ erledigt |
 | 10 | Prompt Engineering (CoT, Few-Shot, XML-Tags) | [le10_prompt_engineering.md](le10_prompt_engineering.md) | offen |
 | 11 | Halluzinationen & Safety | [le11_halluzinationen_safety.md](le11_halluzinationen_safety.md) | offen |

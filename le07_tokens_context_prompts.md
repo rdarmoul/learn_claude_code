@@ -1,5 +1,5 @@
-# Tag 1 — Wie Claude funktioniert
-> Senior Developer Onboarding · 2 Stunden
+# LE 07 — Tokens, Context Window & Prompts
+> Lernblock 2: Grundlagen verstehen · 1 Stunde
 
 ---
 
@@ -272,7 +272,7 @@ Mit CoT:
 
 ---
 
-## Zusammenfassung Tag 1
+## Zusammenfassung LE 07
 
 ```
 ┌─────────────────────────────────────────────────────────┐

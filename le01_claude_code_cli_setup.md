@@ -1,11 +1,9 @@
-# Tag 2 — Claude als Werkzeug
-> Senior Developer Onboarding · 2 Stunden
+# LE 01 — Claude Code CLI: Erste Schritte
+> Lernblock 1: Sofort produktiv · 1 Stunde
 
 ---
 
-## 1. Claude Code CLI (30 min)
-
-### Was ist Claude Code?
+## 1. Was ist Claude Code? (15 min)
 
 Claude Code ist kein Chat-Interface — es ist ein **autonomer Coding-Agent** der direkt in deinem Terminal läuft und auf dein Filesystem, Git und Shell zugreifen kann.
 
@@ -33,327 +31,131 @@ Claude Code CLI:
 │  │ Claude   │  ← Das Modell läuft bei Anthropic,        │
 │  │ API      │    nur die Tools laufen lokal             │
 └──┴──────────┴───────────────────────────────────────────┘
-```
 
-### Permission-System
-
-Claude Code hat ein abgestuftes Erlaubnissystem — du entscheidest wie viel Autonomie du gibst:
-
-```
-PERMISSION LEVELS:
-                                        Risiko
-┌────────────────────────────────────┐    │
-│ READ (immer erlaubt)               │    ▼
-│   Dateien lesen, Glob, Grep        │  niedrig
-├────────────────────────────────────┤
-│ WRITE (Bestätigung oder Auto)      │
-│   Dateien schreiben/editieren      │  mittel
-├────────────────────────────────────┤
-│ BASH (Bestätigung oder Auto)       │
-│   Shell-Befehle ausführen          │  hoch
-├────────────────────────────────────┤
-│ MCP / EXTERNE TOOLS                │
-│   Datenbanken, APIs, Services      │  sehr hoch
-└────────────────────────────────────┘
-
-Modi:
-  default  → Claude fragt bei riskantem Actions nach
-  --dangerously-skip-permissions → alles ohne Fragen (Vorsicht!)
-```
-
-### Hooks: Automatisierungen
-
-Hooks sind Shell-Commands die auf Claude Code Events reagieren:
-
-```
-settings.json (hooks Konfiguration):
-
-{
-  "hooks": {
-    "PreToolUse": [          ← bevor ein Tool ausgeführt wird
-      {
-        "matcher": "Bash",
-        "hooks": [{
-          "type": "command",
-          "command": "echo 'Bash-Tool wird aufgerufen'"
-        }]
-      }
-    ],
-    "PostToolUse": [...],    ← nach einem Tool-Aufruf
-    "Stop": [...]            ← wenn Claude fertig ist
-  }
-}
-
-Praktische Einsätze:
-  - Automatisch Tests laufen nach Code-Änderungen
-  - Logging aller Datei-Modifikationen
-  - Benachrichtigungen wenn Claude fertig ist
+Wichtig: Claude Code ist kein eigenständiges Modell.
+Es ist eine Shell um Claude-Sonnet/Opus, die Tools lokal ausführt.
 ```
 
 ---
 
-## 2. Anthropic API (30 min)
+## 2. Installation & erster Start (15 min)
 
-### Die Messages API — Grundstruktur
+```bash
+# Installation (Node.js >= 18 vorausgesetzt)
+npm install -g @anthropic-ai/claude-code
 
-```
-HTTP POST https://api.anthropic.com/v1/messages
+# API Key setzen (einmalig)
+export ANTHROPIC_API_KEY="sk-ant-..."
+# → am besten in ~/.zshrc oder ~/.bashrc eintragen
 
-Headers:
-  x-api-key:         sk-ant-...
-  anthropic-version: 2023-06-01
-  content-type:      application/json
+# Starten im Projekt-Verzeichnis
+cd /dein/java/projekt
+claude
 
-Body:
-{
-  "model": "claude-sonnet-4-6",
-  "max_tokens": 1024,
-  "system": "Du bist ein hilfreicher Assistent.",   ← optional
-  "messages": [
-    {"role": "user",      "content": "Hallo!"},
-    {"role": "assistant", "content": "Hallo!"},     ← optional: Verlauf
-    {"role": "user",      "content": "Wie geht's?"}
-  ]
-}
-
-Response:
-{
-  "id": "msg_01...",
-  "type": "message",
-  "role": "assistant",
-  "content": [{"type": "text", "text": "Mir geht es gut!"}],
-  "usage": {
-    "input_tokens":  42,    ← was du gezahlt hast (Kontext)
-    "output_tokens": 12     ← was du gezahlt hast (Antwort)
-  }
-}
+# Oder direkt mit einer Aufgabe
+claude "Analysiere die Projektstruktur und erkläre was dieses Projekt tut"
 ```
 
-### Modell-Übersicht (Stand April 2026)
+### Wichtige CLI-Befehle
 
 ```
-┌──────────────────┬────────────────┬──────────┬──────────────┐
-│ Modell           │ Stärke         │ Speed    │ Kosten       │
-├──────────────────┼────────────────┼──────────┼──────────────┤
-│ claude-opus-4-6  │ Höchste Intel. │ langsam  │ teuer        │
-│                  │ Komplexe Tasks │          │              │
-├──────────────────┼────────────────┼──────────┼──────────────┤
-│ claude-sonnet-4-6│ Ausgewogen     │ mittel   │ mittel       │
-│  ← Standard      │ Coding, Analyse│          │              │
-├──────────────────┼────────────────┼──────────┼──────────────┤
-│ claude-haiku-4-5 │ Einfache Tasks │ schnell  │ günstig      │
-│                  │ Klassifikation │          │              │
-└──────────────────┴────────────────┴──────────┴──────────────┘
+/help          → alle verfügbaren Kommandos anzeigen
+/clear         → Konversation zurücksetzen (Context leeren)
+/compact       → Konversation zusammenfassen (Context-Platz sparen)
+/cost          → Token-Verbrauch und Kosten der Session anzeigen
+/model         → Modell wechseln (sonnet / opus / haiku)
+/exit          → Claude Code beenden
 
-Faustregel: Sonnet für fast alles. Opus wenn Sonnet scheitert.
-            Haiku für Massenoperationen (tausende Aufrufe).
-```
-
-### Kosten verstehen
-
-```
-Tokens IN  (Input):   alles was Claude liest
-                      = System Prompt + Verlauf + deine Frage
-
-Tokens OUT (Output):  alles was Claude schreibt
-                      = die Antwort
-
-Kosten-Beispiel (Sonnet 4.6, ca. $3/$15 per MTok):
-
-┌─────────────────────────────────────────────────────┐
-│  System Prompt:    500 Tokens                       │
-│  Verlauf:        2.000 Tokens  } Input = 3.000 T.  │
-│  Deine Frage:      500 Tokens                       │
-│                              → ~$0.009              │
-│  Antwort:          500 Tokens  } Output = 500 T.   │
-│                              → ~$0.0075             │
-│                                                     │
-│  Gesamt: ~$0.017 pro Konversations-Runde            │
-└─────────────────────────────────────────────────────┘
-
-WICHTIG: Bei langen Konversationen zahlt man immer
-         den GESAMTEN Verlauf als Input!
+Ctrl+C         → Laufende Aktion abbrechen
+Ctrl+D         → Claude Code beenden
 ```
 
 ---
 
-## 3. Tool Use (Function Calling) (30 min)
+## 3. Wie Claude Code Aufgaben löst (15 min)
 
-### Wie Tool Use funktioniert
-
-Tool Use ist kein Magic — es ist ein **strukturiertes Protokoll** im Context Window. Claude generiert JSON, das System führt es aus, das Ergebnis kommt zurück.
+Claude Code arbeitet als **ReAct-Agent** (Reason + Act):
 
 ```
-┌──────────────────────────────────────────────────────────┐
-│  Du definierst Tools in deiner API-Anfrage:              │
-│                                                          │
-│  tools: [{                                               │
-│    "name": "get_weather",                                │
-│    "description": "Gibt das Wetter für eine Stadt",      │
-│    "input_schema": {                                     │
-│      "type": "object",                                   │
-│      "properties": {                                     │
-│        "city": {"type": "string"}                        │
-│      }                                                   │
-│    }                                                     │
-│  }]                                                      │
-└──────────────────────────────────────────────────────────┘
-
-Ablauf:
-                     ┌──────────┐
- User: "Wie ist      │  Claude  │
- das Wetter in  ───► │  (LLM)   │
- Berlin?"            └────┬─────┘
-                          │ Entscheidet: Tool nötig!
-                          ▼
-              Content: tool_use
-              {
-                "name": "get_weather",
-                "input": {"city": "Berlin"}
-              }
-                          │
-                          ▼
-              ┌─────────────────────┐
-              │  DEIN CODE          │
-              │  führt API-Call aus │
-              │  → "18°C, bewölkt"  │
-              └──────────┬──────────┘
-                         │
-                         ▼
-              Content: tool_result
-              {"content": "18°C, bewölkt"}
-                         │
-                         ▼
-                    ┌──────────┐
-                    │  Claude  │
-                    │  (LLM)   │ "In Berlin sind es
-                    └──────────┘  aktuell 18°C..."
+Du: "Finde den Bug der beim Login auftritt"
+         │
+         ▼
+Claude denkt: "Ich muss erst verstehen wo Login-Code ist"
+         │
+         ▼  Tool: Glob("**/Login*.java")
+         │
+Claude denkt: "UserController.java — ich lese es"
+         │
+         ▼  Tool: Read("UserController.java")
+         │
+Claude denkt: "Zeile 47 — null-Check fehlt. Ich schaue den Test an"
+         │
+         ▼  Tool: Read("UserControllerTest.java")
+         │
+Claude: "Bug gefunden in UserController.java:47
+         user.getSession() kann null sein.
+         Fix: Optional<Session> nutzen."
 ```
 
-### Tool Use im Claude Code Context
-
-Claude Code hat eingebaute Tools — das ist genau dasselbe Mechanismus:
-
+Du siehst jeden Tool-Call in der Ausgabe:
 ```
-Tool: Read    → liest Datei vom Disk
-Tool: Edit    → schreibt Änderung in Datei
-Tool: Bash    → führt Shell-Befehl aus
-Tool: Glob    → findet Dateien per Pattern
-Tool: Grep    → durchsucht Dateiinhalt
-Tool: WebFetch→ lädt URL
-Tool: Agent   → startet Sub-Agent (!)
-
-Du siehst diese Tool-Calls in deiner Session:
-  "Let me read this file"  → Read tool call
-  "Let me run the tests"   → Bash tool call
+"Let me read this file..."  → Read tool
+"Let me search for..."      → Grep/Glob tool
+"Let me run the tests..."   → Bash tool
+"Let me edit..."            → Edit tool
 ```
 
 ---
 
-## 4. Hands-on: Kleines API-Skript (30 min)
+## 4. CLAUDE.md — dein Projekt-Briefing (15 min)
 
-### Python-Beispiel mit dem Anthropic SDK
+Claude Code liest beim Start automatisch `CLAUDE.md` im Projektverzeichnis. Das ist dein **dauerhaftes Briefing** an Claude.
 
-```python
-# pip install anthropic
-import anthropic
+```markdown
+# CLAUDE.md — Mein Java Projekt
 
-client = anthropic.Anthropic(api_key="sk-ant-...")
+## Stack
+- Java 17, Spring Boot 3.2, Maven
+- JUnit 5, Mockito, PostgreSQL
 
-# Einfache Nachricht
-message = client.messages.create(
-    model="claude-sonnet-4-6",
-    max_tokens=1024,
-    messages=[
-        {"role": "user", "content": "Erkläre Dependency Injection in 3 Sätzen."}
-    ]
-)
+## Konventionen
+- Google Java Style Guide
+- Optional statt null
+- Constructor Injection (kein @Autowired auf Feldern)
 
-print(message.content[0].text)
-print(f"Tokens: {message.usage.input_tokens} in / {message.usage.output_tokens} out")
+## Was du immer tust
+- Tests für jede neue Methode schreiben
+- Bei API-Methoden: immer die Javadoc prüfen
+
+## Verboten
+- System.out.println (→ Logger nutzen)
+- java.util.Date (→ java.time)
 ```
 
-### Mit System Prompt und Verlauf
-
-```python
-# Konversation mit Verlauf
-messages = []
-
-def chat(user_input: str) -> str:
-    messages.append({"role": "user", "content": user_input})
-
-    response = client.messages.create(
-        model="claude-sonnet-4-6",
-        max_tokens=1024,
-        system="Du bist ein präziser technischer Assistent. Antworte auf Deutsch.",
-        messages=messages
-    )
-
-    assistant_message = response.content[0].text
-    messages.append({"role": "assistant", "content": assistant_message})
-    return assistant_message
-
-# Multi-turn Konversation
-print(chat("Was ist ein Mutex?"))
-print(chat("Wann sollte ich stattdessen ein RWMutex nutzen?"))
-# Beachte: 2. Frage "versteht" den Kontext der 1. Frage
-```
-
-### Mit Tool Use
-
-```python
-import json
-
-tools = [{
-    "name": "execute_code",
-    "description": "Führt Python-Code aus und gibt das Ergebnis zurück",
-    "input_schema": {
-        "type": "object",
-        "properties": {
-            "code": {"type": "string", "description": "Auszuführender Python-Code"}
-        },
-        "required": ["code"]
-    }
-}]
-
-response = client.messages.create(
-    model="claude-sonnet-4-6",
-    max_tokens=1024,
-    tools=tools,
-    messages=[{"role": "user", "content": "Was ist 2^10?"}]
-)
-
-# Prüfe ob Claude ein Tool aufgerufen hat
-if response.stop_reason == "tool_use":
-    tool_call = response.content[1]  # tool_use block
-    print(f"Tool: {tool_call.name}")
-    print(f"Input: {tool_call.input}")
-    # Hier würdest du den Code ausführen und das Ergebnis zurückschicken
-```
+**Ohne CLAUDE.md:** Claude kennt deinen Stack und deine Standards nicht.
+**Mit CLAUDE.md:** Claude arbeitet sofort nach deinen Regeln.
 
 ---
 
-## Zusammenfassung Tag 2
+## Zusammenfassung LE 01
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                  MENTAL MODEL                           │
+│  MENTAL MODEL: Claude Code CLI                          │
 │                                                         │
-│  1. Claude Code = Agent mit Filesystem/Shell-Zugriff    │
-│     → Kein manuelles Copy-Paste mehr                    │
+│  Claude Code = Terminal-Agent der lokal Tools ausführt  │
+│  Modell läuft bei Anthropic, Tools laufen auf deiner   │
+│  Maschine                                               │
 │                                                         │
-│  2. API = HTTP POST, Messages-Array, Token-basiert      │
-│     → Verlauf manuell mitschicken, kostet Tokens        │
+│  Erste Schritte:                                        │
+│    npm install -g @anthropic-ai/claude-code             │
+│    ANTHROPIC_API_KEY setzen → claude starten            │
 │                                                         │
-│  3. Tool Use = Claude generiert JSON → dein Code        │
-│     führt es aus → Ergebnis zurück → Claude antwortet   │
-│                                                         │
-│  4. Modell-Wahl: Sonnet als Default,                    │
-│     Opus für komplexe Tasks, Haiku für Masse            │
+│  CLAUDE.md = Dauerhaftes Briefing für das Projekt       │
+│  → immer anlegen, Stack + Konventionen + Verbote        │
 └─────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-*Zurück: [Tag 1 — Wie ich funktioniere](le07_tokens_context_prompts.md)*
-*Weiter: [Tag 3 — Architektur & Grenzen](le09_transformer_architektur.md)*
+*Weiter: [LE 02 — CLAUDE.md, Permissions & Hooks](le02_claude_md_permissions_hooks.md)*

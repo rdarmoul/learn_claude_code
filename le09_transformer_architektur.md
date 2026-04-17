@@ -1,5 +1,5 @@
-# Tag 3 — Architektur & Grenzen
-> Senior Developer Onboarding · 2 Stunden
+# LE 09 — Transformer-Architektur, Agents, RAG & Safety
+> Lernblock 2: Grundlagen verstehen · 1 Stunde
 
 ---
 
