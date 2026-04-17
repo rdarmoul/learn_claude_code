@@ -52,10 +52,11 @@ Schulungsunterlagen für einen strukturierten, praxisorientierten Einstieg in Cl
 | LE  | Thema | Datei | Status |
 |-----|-------|-------|--------|
 | 18 | Custom Slash Commands & Skill Templates | [le18_skills_slash_commands.md](le18_skills_slash_commands.md) | offen |
-| 19 | MCP — Tool-Server bauen & verteilen | [le19_mcp_server.md](le19_mcp_server.md) | offen |
-| 20 | Zentrale AI-Infrastruktur für Teams & Unternehmen | [le20_team_ai_infrastruktur.md](le20_team_ai_infrastruktur.md) | offen |
-| 21 | Production Deployment: Kosten, Latenz, Monitoring | [le21_production_deployment.md](le21_production_deployment.md) | offen |
-| 22 | Architektur-Muster: RAG + Memory + Multi-Agent | [le22_architektur_muster.md](le22_architektur_muster.md) | offen |
+| 19 | Harness Engineering — settings.json, Hooks & Automatisierung | [le19_harness_engineering.md](le19_harness_engineering.md) | offen |
+| 20 | MCP — Tool-Server bauen & verteilen | [le20_mcp_server.md](le20_mcp_server.md) | offen |
+| 21 | Zentrale AI-Infrastruktur für Teams & Unternehmen | [le21_team_ai_infrastruktur.md](le21_team_ai_infrastruktur.md) | offen |
+| 22 | Production Deployment: Kosten, Latenz, Monitoring | [le22_production_deployment.md](le22_production_deployment.md) | offen |
+| 23 | Architektur-Muster: RAG + Memory + Multi-Agent | [le23_architektur_muster.md](le23_architektur_muster.md) | offen |
 
 ---
 
@@ -64,10 +65,10 @@ Schulungsunterlagen für einen strukturierten, praxisorientierten Einstieg in Cl
 
 | LE  | Thema | Datei | Status |
 |-----|-------|-------|--------|
-| 23 | Multi-Agent Systeme vertieft | [le23_multi_agent_vertieft.md](le23_multi_agent_vertieft.md) | offen |
-| 24 | RAG vertieft (Chunking, Reranking, Evaluation) | [le24_rag_vertieft.md](le24_rag_vertieft.md) | offen |
-| 25 | Fine-tuning: Wann und Wie | [le25_fine_tuning.md](le25_fine_tuning.md) | offen |
-| 26 | Wiederholung & nächste Schritte | [le26_wiederholung.md](le26_wiederholung.md) | offen |
+| 24 | Multi-Agent Systeme vertieft | [le24_multi_agent_vertieft.md](le24_multi_agent_vertieft.md) | offen |
+| 25 | RAG vertieft (Chunking, Reranking, Evaluation) | [le25_rag_vertieft.md](le25_rag_vertieft.md) | offen |
+| 26 | Fine-tuning: Wann und Wie | [le26_fine_tuning.md](le26_fine_tuning.md) | offen |
+| 27 | Wiederholung & nächste Schritte | [le27_wiederholung.md](le27_wiederholung.md) | offen |
 
 ---
 
@@ -77,10 +78,10 @@ Schulungsunterlagen für einen strukturierten, praxisorientierten Einstieg in Cl
 Block 1 (Sofort produktiv):  ████░░░░░░   2/6  ( 33%)
 Block 2 (Grundlagen):        ███████░░░   3/5  ( 60%)
 Block 3 (Bauen):             ░░░░░░░░░░   0/6  (  0%)
-Block 4 (Verteilen):         ░░░░░░░░░░   0/5  (  0%)
+Block 4 (Verteilen):         ░░░░░░░░░░   0/6  (  0%)
 Block 5 (Vertiefung):        ░░░░░░░░░░   0/4  (  0%)
 
-Gesamt:                      ████░░░░░░   5/26 ( 19%)
+Gesamt:                      ████░░░░░░   5/27 ( 19%)
 ```
 
 ---
