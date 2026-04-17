@@ -4,7 +4,8 @@ Schulungsunterlagen für einen strukturierten Einstieg in Claude Code und die An
 
 ## Lernziel
 
-Claude Code, seine Architektur und Funktionsweise in 13 Tagen à 1 Stunde praktisch verstehen und auf reale Java-Projekte anwenden können.
+1. Claude Code, seine Architektur und Funktionsweise in 13 Tagen à 1 Stunde praktisch verstehen und auf reale Java-Projekte anwenden können.
+2. Ergänze die Schulung um weitere 13 Tage a 1 Stunde um mich auf das Wissens-Nivau eines AI-Architekt zu heben.
 
 ## Inhalt
 
