@@ -1,58 +1,102 @@
 # Claude Code Schnelleinstieg
+> Senior Java-Entwickler · AI-Beginner → AI-Profi · 26 Lerneinheiten à 1 Stunde
 
-Schulungsunterlagen für einen strukturierten Einstieg in Claude Code und die Anthropic API — aus der Perspektive eines Senior Java-Entwicklers ohne AI-Vorkenntnisse.
+Schulungsunterlagen für einen strukturierten, praxisorientierten Einstieg in Claude Code und die Anthropic-Plattform — aus der Perspektive eines Senior Java-Entwicklers.
+
+---
 
 ## Lernziel
 
-1. Claude Code, seine Architektur und Funktionsweise in 13 Tagen à 1 Stunde praktisch verstehen und auf reale Java-Projekte anwenden können.
-2. Ergänze die Schulung um weitere 13 Tage a 1 Stunde um mich auf das Wissens-Nivau eines AI-Architekt zu heben.
+1. **Claude Code praktisch beherrschen** — von ersten Schritten bis zum täglichen Einsatz im Java-Projekt
+2. **AI-Systeme bauen** — Tool Use, Agents, RAG, Memory, Anthropic API
+3. **AI-Fähigkeiten skalieren** — Slash Commands, MCP-Server, zentrale Infrastruktur für Teams
+4. **Fortgeschrittene Themen** — Multi-Agent, RAG vertieft, Fine-tuning, Production
 
-## Inhalt
+---
 
-| Verzeichnis | Beschreibung |
-|-------------|--------------|
-| `tag*.md` | Tagesunterlagen (Theorie + Diagramme) |
-| `aufgaben/` | Arbeitsergebnisse aus Übungen |
+## Lernplan (26 Lerneinheiten)
+
+### Block 1: Sofort produktiv (LE 01–06)
+| LE | Thema | Status |
+|----|-------|--------|
+| 01 | Claude Code CLI — Erste Schritte | ✓ |
+| 02 | CLAUDE.md, Permissions & Hooks | ✓ |
+| 03 | Java täglich: Code Review & Refactoring | ○ |
+| 04 | Java täglich: Debugging & Testing | ○ |
+| 05 | Legacy Code Migration | ○ |
+| 06 | Praxis: Dark Factory Migration | ○ |
+
+### Block 2: Grundlagen verstehen (LE 07–11)
+| LE | Thema | Status |
+|----|-------|--------|
+| 07 | Tokens, Context Window & Prompts | ✓ |
+| 08 | Anthropic API — Messages, Models & Kosten | ✓ |
+| 09 | Transformer-Architektur & Attention | ✓ |
+| 10 | Prompt Engineering (CoT, Few-Shot, XML-Tags) | ○ |
+| 11 | Halluzinationen & Safety | ○ |
+
+### Block 3: KI-Werkzeuge bauen (LE 12–17)
+| LE | Thema | Status |
+|----|-------|--------|
+| 12 | Tool Use & Function Calling (Deep Dive) | ○ |
+| 13 | Agent Loop & ReAct Pattern | ○ |
+| 14 | RAG & Embeddings | ○ |
+| 15 | Memory-Systeme | ○ |
+| 16 | CI/CD Integration | ○ |
+| 17 | Claude API für eigene Produkte | ○ |
+
+### Block 4: AI-Fähigkeiten zentralisieren & verteilen (LE 18–22)
+| LE | Thema | Status |
+|----|-------|--------|
+| 18 | Custom Slash Commands & Skill Templates | ○ |
+| 19 | MCP — Tool-Server bauen & verteilen | ○ |
+| 20 | Zentrale AI-Infrastruktur für Teams | ○ |
+| 21 | Production Deployment: Kosten, Latenz, Monitoring | ○ |
+| 22 | Architektur-Muster: RAG + Memory + Multi-Agent | ○ |
+
+### Block 5: Vertiefung (LE 23–26)
+| LE | Thema | Status |
+|----|-------|--------|
+| 23 | Multi-Agent Systeme vertieft | ○ |
+| 24 | RAG vertieft (Chunking, Reranking, Evaluation) | ○ |
+| 25 | Fine-tuning: Wann und Wie | ○ |
+| 26 | Wiederholung & nächste Schritte | ○ |
+
+---
+
+## Ablagestruktur
+
+| Pfad | Inhalt |
+|------|--------|
+| `tag*.md`, `le*.md` | Lerneinheiten (Theorie + Code-Beispiele) |
+| `aufgaben/` | Arbeitsergebnisse aus praktischen Übungen |
 | `ausflüge/` | Vertiefungen zu AI-relevanten Themen |
-| `CLAUDE.md` | Instruktionen für Claude Code in diesem Projekt |
-| `_index.md` | Inhaltsverzeichnis & Lernplan |
+| `CLAUDE.md` | Claude Code Instruktionen für dieses Projekt |
+| `_index.md` | Vollständiges Inhaltsverzeichnis mit Fortschritt |
 
-## Lernplan
-
-| Tag | Thema |
-|-----|-------|
-| 1 | Wie Claude funktioniert (Tokens, Context, Prompts) |
-| 2 | Claude Code CLI & CLAUDE.md |
-| 3 | Anthropic API — Messages, Tokens, Kosten |
-| 4 | Tool Use & Function Calling |
-| 5 | Agents & Multi-step Tasks |
-| 6 | RAG — Retrieval-Augmented Generation |
-| 7 | Prompt Engineering vertieft |
-| 8 | Dark Factory: Pipeline, Migration & CI/CD |
-| 9 | Claude Code & Java — Review, Refactoring, Debugging |
-| 10 | Praxis: Claude Code im eigenen Projekt |
-| 11 | Grenzen, Halluzinationen & Safety |
-| 12 | Architektur-Muster: RAG, Memory, Multi-Agent |
-| 13 | Wiederholung & nächste Schritte |
+---
 
 ## Schwerpunkte
 
-- **WildFly → Spring Boot Migration** mit AI-Unterstützung
-- **Dark Factory Konzept**: vollautomatisierte Migrationspipeline
-- **Java 21** als Zielplattform
+- **WildFly → Spring Boot Migration** mit AI-Unterstützung (LE 05, 06)
+- **Java 17/21** als Zielplattform für alle Code-Beispiele
+- **Team-Skalierung**: Von persönlichem Tool zu unternehmensweiter AI-Infrastruktur (Block 4)
+- **MCP-Server** für JIRA, Confluence, interne APIs (LE 19)
+
+---
 
 ## Voraussetzungen
 
-- Java-Entwicklungserfahrung
-- Claude Code CLI installiert (`npm install -g @anthropic-ai/claude-code`)
-- Anthropic API Key
+- Java-Entwicklungserfahrung (Senior Level)
+- Claude Code CLI: `npm install -g @anthropic-ai/claude-code`
+- Anthropic API Key (kostenlos testen, dann Pay-as-you-go)
 
-## Nutzung
+## Schnellstart
 
 ```bash
 git clone git@github.com:rdarmoul/learn_claude_code.git
 cd learn_claude_code
-claude
+claude   # startet Claude Code, liest CLAUDE.md automatisch
 ```
 
 ---
