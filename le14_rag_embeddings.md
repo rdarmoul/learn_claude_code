@@ -240,5 +240,5 @@ Für Java-Projekte empfohlen:
 
 ---
 
-*Zurück: [LE 07 — Agent Loop & ReAct](le07_agent_loop_react.md)*
-*Weiter: [LE 09 — Memory-Systeme](le09_memory_systeme.md)*
+*Zurück: [LE 07 — Agent Loop & ReAct](le13_agent_loop_react.md)*
+*Weiter: [LE 09 — Memory-Systeme](le15_memory_systeme.md)*

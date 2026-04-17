@@ -317,5 +317,5 @@ if tracker.total_cost > MAX_BUDGET_USD:
 
 ---
 
-*Zurück: [LE 16 — Prompt Engineering vertieft](le16_prompt_engineering_vertieft.md)*
-*Weiter: [LE 18 — RAG vertieft](le18_rag_vertieft.md)*
+*Zurück: [LE 16 — Prompt Engineering vertieft](le10_prompt_engineering.md)*
+*Weiter: [LE 18 — RAG vertieft](le24_rag_vertieft.md)*

@@ -244,5 +244,5 @@ def evaluate_fine_tuned_model(
 
 ---
 
-*Zurück: [LE 18 — RAG vertieft](le18_rag_vertieft.md)*
-*Weiter: [LE 20 — Claude API für eigene Produkte](le20_claude_api_produkte.md)*
+*Zurück: [LE 18 — RAG vertieft](le24_rag_vertieft.md)*
+*Weiter: [LE 20 — Claude API für eigene Produkte](le17_claude_api_produkte.md)*

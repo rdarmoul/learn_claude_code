@@ -237,5 +237,5 @@ void processOrderReturnsNullForEmptyCart() {
 
 ---
 
-*Zurück: [LE 12 — Java Debugging & Testing](le12_java_debugging_testing.md)*
-*Weiter: [LE 14 — CI/CD Integration](le14_cicd_integration.md)*
+*Zurück: [LE 12 — Java Debugging & Testing](le04_java_debugging_testing.md)*
+*Weiter: [LE 14 — CI/CD Integration](le16_cicd_integration.md)*

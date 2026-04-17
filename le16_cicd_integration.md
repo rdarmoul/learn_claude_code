@@ -358,5 +358,5 @@ OPTIMIERUNGSTIPPS:
 
 ---
 
-*Zurück: [LE 13 — Legacy Migration](le13_legacy_migration.md)*
-*Weiter: [LE 15 — Praxis: Dark Factory Migration](le15_praxis_dark_factory.md)*
+*Zurück: [LE 13 — Legacy Migration](le05_legacy_migration.md)*
+*Weiter: [LE 15 — Praxis: Dark Factory Migration](le06_praxis_dark_factory.md)*

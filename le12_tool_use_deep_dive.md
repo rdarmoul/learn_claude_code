@@ -288,5 +288,5 @@ results.append({
 
 ---
 
-*Zurück: [LE 05 — Transformer-Architektur](tag3_architektur_und_grenzen.md)*
-*Weiter: [LE 07 — Agent Loop & ReAct](le07_agent_loop_react.md)*
+*Zurück: [LE 05 — Transformer-Architektur](le09_transformer_architektur.md)*
+*Weiter: [LE 07 — Agent Loop & ReAct](le13_agent_loop_react.md)*

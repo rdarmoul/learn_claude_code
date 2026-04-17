@@ -285,5 +285,5 @@ test_cases = [
 
 ---
 
-*Zurück: [LE 17 — Multi-Agent vertieft](le17_multi_agent_vertieft.md)*
-*Weiter: [LE 19 — Fine-tuning](le19_fine_tuning.md)*
+*Zurück: [LE 17 — Multi-Agent vertieft](le23_multi_agent_vertieft.md)*
+*Weiter: [LE 19 — Fine-tuning](le25_fine_tuning.md)*

@@ -256,4 +256,4 @@ Wichtig: Commands enthalten keinen Code → kein Sicherheits-Review nötig
 
 ---
 
-*Weiter: [MCP — Tool-Server bauen](le_mcp_server.md)*
+*Weiter: [MCP — Tool-Server bauen](le19_mcp_server.md)*

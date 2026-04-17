@@ -234,5 +234,5 @@ Claude ist STARK bei:
 
 ---
 
-*Zurück: [LE 10 — Halluzinationen & Safety](le10_halluzinationen_safety.md)*
-*Weiter: [LE 12 — Java Debugging & Testing](le12_java_debugging_testing.md)*
+*Zurück: [LE 10 — Halluzinationen & Safety](le11_halluzinationen_safety.md)*
+*Weiter: [LE 12 — Java Debugging & Testing](le04_java_debugging_testing.md)*

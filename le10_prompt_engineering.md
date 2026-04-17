@@ -269,5 +269,5 @@ ANTI-PATTERN 5: Output-Format ignorieren
 
 ---
 
-*Zurück: [LE 15 — Praxis Dark Factory](le15_praxis_dark_factory.md)*
-*Weiter: [LE 17 — Multi-Agent Systeme vertieft](le17_multi_agent_vertieft.md)*
+*Zurück: [LE 15 — Praxis Dark Factory](le06_praxis_dark_factory.md)*
+*Weiter: [LE 17 — Multi-Agent Systeme vertieft](le23_multi_agent_vertieft.md)*

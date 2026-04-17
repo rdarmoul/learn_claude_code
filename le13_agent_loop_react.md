@@ -278,5 +278,5 @@ Bei langen, tiefen Agenten-Ketten: Kosten explodieren schnell.
 
 ---
 
-*Zurück: [LE 06 — Tool Use Deep Dive](le06_tool_use_deep_dive.md)*
-*Weiter: [LE 08 — RAG & Embeddings](le08_rag_embeddings.md)*
+*Zurück: [LE 06 — Tool Use Deep Dive](le12_tool_use_deep_dive.md)*
+*Weiter: [LE 08 — RAG & Embeddings](le14_rag_embeddings.md)*

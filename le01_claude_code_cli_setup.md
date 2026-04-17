@@ -355,5 +355,5 @@ if response.stop_reason == "tool_use":
 
 ---
 
-*Zurück: [Tag 1 — Wie ich funktioniere](tag1_wie_ich_funktioniere.md)*
-*Weiter: [Tag 3 — Architektur & Grenzen](tag3_architektur_und_grenzen.md)*
+*Zurück: [Tag 1 — Wie ich funktioniere](le07_tokens_context_prompts.md)*
+*Weiter: [Tag 3 — Architektur & Grenzen](le09_transformer_architektur.md)*

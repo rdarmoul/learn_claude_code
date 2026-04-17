@@ -375,5 +375,5 @@ Sicherheit:
 
 ---
 
-*Zurück: [Custom Slash Commands](le_skills_slash_commands.md)*
-*Weiter: [Zentrale AI-Infrastruktur für Teams](le_team_ai_infrastruktur.md)*
+*Zurück: [Custom Slash Commands](le18_skills_slash_commands.md)*
+*Weiter: [Zentrale AI-Infrastruktur für Teams](le20_team_ai_infrastruktur.md)*

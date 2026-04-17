@@ -266,5 +266,5 @@ Am Ende der Session:
 
 ---
 
-*Zurück: [LE 08 — RAG & Embeddings](le08_rag_embeddings.md)*
-*Weiter: [LE 10 — Halluzinationen & Safety](le10_halluzinationen_safety.md)*
+*Zurück: [LE 08 — RAG & Embeddings](le14_rag_embeddings.md)*
+*Weiter: [LE 10 — Halluzinationen & Safety](le11_halluzinationen_safety.md)*

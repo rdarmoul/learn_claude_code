@@ -432,4 +432,4 @@ Als Senior Developer:
 
 ---
 
-*Zurück: [Tag 2 — Claude als Werkzeug](tag2_claude_als_werkzeug.md)*
+*Zurück: [Tag 2 — Claude als Werkzeug](le01_claude_code_cli_setup.md)*

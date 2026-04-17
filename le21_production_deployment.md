@@ -308,5 +308,5 @@ def validate_input(user_input: str) -> str:
 
 ---
 
-*Zurück: [LE 20 — Claude API für eigene Produkte](le20_claude_api_produkte.md)*
+*Zurück: [LE 20 — Claude API für eigene Produkte](le17_claude_api_produkte.md)*
 *Weiter: [LE 22 — Architektur-Muster](le22_architektur_muster.md)*

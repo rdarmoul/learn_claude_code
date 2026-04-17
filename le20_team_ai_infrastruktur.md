@@ -348,5 +348,5 @@ Empfehlung:
 
 ---
 
-*Zurück: [MCP — Tool-Server bauen](le_mcp_server.md)*
-*Weiter: [Claude API für eigene Produkte](le20_claude_api_produkte.md)*
+*Zurück: [MCP — Tool-Server bauen](le19_mcp_server.md)*
+*Weiter: [Claude API für eigene Produkte](le17_claude_api_produkte.md)*

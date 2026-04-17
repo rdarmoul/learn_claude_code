@@ -253,5 +253,5 @@ if (!resolved.startsWith(Paths.get(baseDir))) throw new SecurityException();
 
 ---
 
-*Zurück: [LE 09 — Memory-Systeme](le09_memory_systeme.md)*
-*Weiter: [LE 11 — Java Code Review & Refactoring](le11_java_review_refactoring.md)*
+*Zurück: [LE 09 — Memory-Systeme](le15_memory_systeme.md)*
+*Weiter: [LE 11 — Java Code Review & Refactoring](le03_java_review_refactoring.md)*

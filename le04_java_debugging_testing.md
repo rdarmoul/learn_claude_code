@@ -289,5 +289,5 @@ DON'T:
 
 ---
 
-*Zurück: [LE 11 — Java Code Review & Refactoring](le11_java_review_refactoring.md)*
-*Weiter: [LE 13 — Legacy Migration](le13_legacy_migration.md)*
+*Zurück: [LE 11 — Java Code Review & Refactoring](le03_java_review_refactoring.md)*
+*Weiter: [LE 13 — Legacy Migration](le05_legacy_migration.md)*

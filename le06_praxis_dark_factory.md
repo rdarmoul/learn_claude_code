@@ -209,5 +209,5 @@ Key Insight:
 
 ---
 
-*Zurück: [LE 14 — CI/CD Integration](le14_cicd_integration.md)*
-*Weiter: [LE 16 — Prompt Engineering vertieft](le16_prompt_engineering_vertieft.md)*
+*Zurück: [LE 14 — CI/CD Integration](le16_cicd_integration.md)*
+*Weiter: [LE 16 — Prompt Engineering vertieft](le10_prompt_engineering.md)*

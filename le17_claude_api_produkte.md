@@ -279,5 +279,5 @@ class ClaudeQueue:
 
 ---
 
-*Zurück: [LE 19 — Fine-tuning](le19_fine_tuning.md)*
+*Zurück: [LE 19 — Fine-tuning](le25_fine_tuning.md)*
 *Weiter: [LE 21 — Production Deployment](le21_production_deployment.md)*
