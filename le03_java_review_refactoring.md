@@ -1,5 +1,5 @@
-# LE 11 — Java Code Review & Refactoring mit Claude Code
-> Lernblock 3: Claude Code im Java-Alltag · 1 Stunde
+# LE 03 — Java Code Review & Refactoring mit Claude Code
+> Lernblock 1: Sofort produktiv · 1 Stunde
 
 ---
 
@@ -59,7 +59,98 @@ NOCH BESSER (mit Kontext):
 
 ---
 
-## 2. Refactoring-Patterns (25 min)
+## 2. Upgrade-getriebene Änderungen: Code erhalten, nur Brüche beheben (20 min)
+
+> Kontext: Bei Modernisierungen wo der Code erhalten bleiben muss —
+> Änderungen nur wenn sie durch das JDK- oder Dependency-Upgrade erzwungen werden.
+
+### Grundregel: Claude als Breaking-Change-Detektor
+
+```
+FALSCH:
+  "Refactore UserService.java auf Java 17"
+  → Claude ändert alles was es kann — nicht gewollt
+
+RICHTIG:
+  "Wir upgraden von Java 11 auf Java 17 und Spring Boot 2.7 auf 3.2.
+   Analysiere UserService.java und zeige NUR Stellen die durch das
+   Upgrade brechen oder deprecated sind.
+   Keine optionalen Verbesserungen, kein Refactoring."
+```
+
+### Checkliste erzwungener Änderungen per Prompt
+
+```
+"Analysiere src/ auf Änderungen die durch folgende Upgrades erzwungen
+ werden — keine weiteren Änderungen:
+
+ JDK 11 → 17:
+   - Entfernte APIs (sun.*, com.sun.*)
+   - SecurityManager (in Java 17 deprecated, Java 18 entfernt)
+   - Starke Encapsulation: illegale reflektive Zugriffe werden Fehler
+
+ Spring Boot 2.7 → 3.x:
+   - javax.* → jakarta.* (vollständiger Namespace-Wechsel)
+   - WebSecurityConfigurerAdapter entfernt → SecurityFilterChain
+   - spring.factories → @AutoConfiguration
+   - Actuator-Endpoint-Pfade geändert
+
+ Gib mir pro Datei: Zeile, was bricht, minimale Korrektur."
+```
+
+### Review-Workflow für Upgrade-Projekte
+
+```
+Schritt 1 — Compile-Fehler als Startpunkt:
+  "Führe mvn compile aus und liste alle Fehler gruppiert nach Ursache"
+
+Schritt 2 — Fehlerklasse analysieren:
+  "Fehlerklasse 'javax.persistence nicht gefunden' —
+   zeige alle betroffenen Dateien und die minimale Korrektur"
+
+Schritt 3 — Minimale Korrektur anwenden:
+  "Ersetze in allen betroffenen Dateien nur den Import-Namespace
+   javax.persistence → jakarta.persistence, keine weiteren Änderungen"
+
+Schritt 4 — Verifizieren:
+  "Führe mvn test aus — gibt es neue Fehler durch die Änderung?"
+
+Schritt 5 — Dokumentieren:
+  "Erstelle eine Commit-Message die erklärt welche Änderungen
+   durch das Upgrade erzwungen waren"
+```
+
+### Typisches Beispiel: javax → jakarta
+
+```java
+// VORHER (Spring Boot 2.x / Java EE):
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.validation.constraints.NotNull;
+import javax.transaction.Transactional;
+
+// NACHHER (Spring Boot 3.x / Jakarta EE) — erzwungene Änderung:
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.validation.constraints.NotNull;
+import jakarta.transaction.Transactional;
+```
+
+**Prompt dafür:**
+```
+"Ersetze in allen Java-Dateien unter src/ den Import-Prefix
+ javax.persistence, javax.validation und javax.transaction
+ durch jakarta.* — nur diese Imports, sonst nichts."
+```
+
+---
+
+## 3. Opportunistische Refactoring-Patterns (15 min)
+
+> Nur relevant wenn Änderungen explizit gewünscht sind — z.B. bei
+> Neuentwicklung oder wenn das Team bewusst modernisieren möchte.
+
+### Pattern 1: Null → Optional
 
 ### Pattern 1: Null → Optional
 
@@ -155,7 +246,7 @@ List<String> result = orders.stream()
 
 ---
 
-## 3. Strukturierter Review-Workflow (15 min)
+## 4. Strukturierter Review-Workflow (10 min)
 
 ### Der Claude Code Review Flow
 
@@ -194,7 +285,7 @@ Schritt 5: Review-Ergebnis
 
 ---
 
-## 4. Review-Grenzen kennen (5 min)
+## 5. Review-Grenzen kennen (5 min)
 
 ```
 Claude ÜBERSIEHT manchmal:
@@ -216,23 +307,23 @@ Claude ist STARK bei:
 
 ---
 
-## Zusammenfassung LE 11
+## Zusammenfassung LE 03
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│  MENTAL MODEL: Code Review mit Claude                   │
-│                                                         │
-│  1. CLAUDE.md = Reviewers "Brief" — Stack & Konventionen│
-│  2. Spezifische Prompts > vage Prompts                  │
-│  3. Schritt-für-Schritt: Analyse → Priorisieren →       │
-│     Implementieren → Testen                             │
-│  4. Claude kennt Java-Features besser als manche        │
-│     Entwickler → Java 17+ Migration = guter Use Case    │
-│  5. Business-Logik immer selbst reviewen                │
-└─────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────┐
+│  MENTAL MODEL: Code Review mit Claude                       │
+│                                                             │
+│  1. CLAUDE.md = Reviewers "Brief" — Stack & Konventionen   │
+│  2. Spezifische Prompts > vage Prompts                      │
+│  3. Upgrade-Modus: "nur erzwungene Änderungen" explizit     │
+│     sagen — sonst refactored Claude opportunistisch         │
+│  4. Workflow: compile → Fehler gruppieren → minimal fixen   │
+│     → testen → dokumentieren                               │
+│  5. Business-Logik immer selbst reviewen                    │
+└─────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-*Zurück: [LE 10 — Halluzinationen & Safety](le11_halluzinationen_safety.md)*
-*Weiter: [LE 12 — Java Debugging & Testing](le04_java_debugging_testing.md)*
+*Zurück: [LE 02 — CLAUDE.md, Permissions & Hooks](le02_claude_md_permissions_hooks.md)*
+*Weiter: [LE 04 — Java täglich: Debugging & Testing](le04_java_debugging_testing.md)*
