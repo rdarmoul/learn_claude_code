@@ -1,5 +1,5 @@
-# LE 12 — Java Debugging & Testing mit Claude Code
-> Lernblock 3: Claude Code im Java-Alltag · 1 Stunde
+# LE 04 — Java Debugging & Testing mit Claude Code
+> Lernblock 1: Sofort produktiv · 1 Stunde
 
 ---
 
@@ -27,10 +27,16 @@ Claude antwortet:
   → schlägt Fix vor (Optional, null-check, early return)
 ```
 
-### Root-Cause-Analyse mit Code
+### Root-Cause-Analyse mit Code — Symptom-First-Prinzip
+
+> **Symptom-First:** Beschreibe zuerst das beobachtbare Verhalten, bevor du Code zeigst.
+> Claude hat ein begrenztes Context Window — mit Symptom-First führst du Claude zur
+> richtigen Stelle, statt die Aufmerksamkeit über 500 Zeilen zu verteilen.
+>
+> Schlechte Alternative: `"Hier ist mein Code: [500 Zeilen]. Fix den Bug."` → Claude rät ins Blaue.
 
 ```
-Effektiver Prompt-Flow für Bugs:
+Effektiver Prompt-Flow für Bugs (Symptom-First):
 
 1. Context setzen:
    "Ich habe einen Bug in meinem Spring Boot Service.
@@ -85,6 +91,76 @@ List<Order> findByUserId(Long userId);
 ---
 
 ## 2. Test-Generierung (25 min)
+
+### @Nested — Struktur und Lesbarkeit
+
+`@Nested` gruppiert Tests nach der Methode die sie testen. Im Test-Report und in der IDE
+entsteht eine lesbare Hierarchie statt einer flachen Liste:
+
+```
+UserServiceTest
+  ├── findUser()
+  │     ├── ✓ gibt User zurück wenn er existiert
+  │     └── ✓ wirft UserNotFoundException wenn User fehlt
+  └── resetPassword()
+        ├── ✓ sendet Email wenn User existiert
+        └── ✓ sendet keine Email wenn EmailService fehlschlägt
+```
+
+Tests werden damit gleichzeitig zur **lebenden Dokumentation** des Services.
+
+---
+
+### Claude ermittelt Testfälle selbst — erst auflisten, dann generieren
+
+Statt Szenarien vorzugeben, den Code analysieren lassen:
+
+```
+Prompt:
+  "Analysiere UserService.java und ermittle selbst alle
+   relevanten Testfälle. Berücksichtige:
+   - alle Methoden
+   - Happy Paths
+   - Fehlerzustände (Exceptions, null, leere Listen)
+   - Grenzwerte
+   
+   Liste zuerst die Testfälle auf, bevor du Code generierst."
+```
+
+Claude antwortet z.B.:
+```
+findUser(Long id):
+  ✓ User existiert → wird zurückgegeben
+  ✓ User nicht gefunden → UserNotFoundException
+  ✓ id = null → IllegalArgumentException
+
+resetPassword(Long id):
+  ✓ User existiert, Email erfolgreich
+  ✓ User nicht gefunden → UserNotFoundException
+  ✓ EmailService wirft Exception → ServiceException
+
+Soll ich alle generieren, oder nur einen Teil?
+```
+
+> **Tipp:** Erst auflisten lassen = dein Plan-Step im Prompt.
+> So kannst du Testfälle reviewen und streichen bevor 200 Zeilen Code kommen.
+
+---
+
+### Wann Plan-Mode bei Tests sinnvoll ist
+
+| Situation | Plan-Mode? |
+|-----------|-----------|
+| Testfälle auflisten lassen | nein |
+| Neue Testdatei generieren | eher nein |
+| Bestehende Tests refactoren | ja |
+| Produktionscode fixen | ja |
+| Mehrere Dateien gleichzeitig ändern | ja |
+
+Plan-Mode greift wenn Claude autonom durch mehrere Dateien navigiert und Änderungen
+vornimmt — z.B. "finde alle untesteten Services und schreibe Tests für alle".
+
+---
 
 ### JUnit 5 Tests generieren
 
@@ -227,6 +303,11 @@ class OrderRepositoryIT {
 
 ## 3. Coverage-Analyse & Gap-Filling (10 min)
 
+> **Welches Tool wofür?** JaCoCo ist nur eines von vielen Java-Tools die Claude sinnvoll mit
+> messbarem Kontext versorgen. Eine vollständige Übersicht nach Aufgabenfeld (Testing, Qualität,
+> Performance, Build, DB-Migration) findet sich im Ausflug:
+> [Java Tooling Übersicht](ausflüge/java_tooling_uebersicht.md)
+
 ```
 Workflow: Coverage-Bericht → Claude → fehlende Tests
 
@@ -268,7 +349,7 @@ DON'T:
 
 ---
 
-## Zusammenfassung LE 12
+## Zusammenfassung LE 04
 
 ```
 ┌─────────────────────────────────────────────────────────┐
@@ -289,5 +370,5 @@ DON'T:
 
 ---
 
-*Zurück: [LE 11 — Java Code Review & Refactoring](le03_java_review_refactoring.md)*
-*Weiter: [LE 13 — Legacy Migration](le05_legacy_migration.md)*
+*Zurück: [LE 03 — Java Code Review & Refactoring](le03_java_review_refactoring.md)*
+*Weiter: [LE 05 — Legacy Migration](le05_legacy_migration.md)*

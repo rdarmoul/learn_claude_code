@@ -13,7 +13,7 @@ Schulungsunterlagen für einen strukturierten, praxisorientierten Einstieg in Cl
 | 01 | Claude Code CLI — Erste Schritte | [le01_claude_code_cli_setup.md](le01_claude_code_cli_setup.md) | ✓ erledigt |
 | 02 | CLAUDE.md, Permissions & Hooks | [le02_claude_md_permissions_hooks.md](le02_claude_md_permissions_hooks.md) | ✓ erledigt |
 | 03 | Java täglich: Code Review & Refactoring | [le03_java_review_refactoring.md](le03_java_review_refactoring.md) | ✓ erledigt |
-| 04 | Java täglich: Debugging & Testing | [le04_java_debugging_testing.md](le04_java_debugging_testing.md) | offen |
+| 04 | Java täglich: Debugging & Testing | [le04_java_debugging_testing.md](le04_java_debugging_testing.md) | ✓ erledigt |
 | 05 | Legacy Code Migration | [le05_legacy_migration.md](le05_legacy_migration.md) | offen |
 | 06 | Praxis: Dark Factory Migration | [le06_praxis_dark_factory.md](le06_praxis_dark_factory.md) | offen |
 | 07 | Java Workflow-Automatisierung — Wiederkehrende Aufgaben mit Claude | [le07_java_workflow_automatisierung.md](le07_java_workflow_automatisierung.md) | offen |
@@ -78,13 +78,13 @@ Schulungsunterlagen für einen strukturierten, praxisorientierten Einstieg in Cl
 ## Fortschritt
 
 ```
-Block 1 (Sofort produktiv):  ████░░░░░░   3/8  ( 38%)
+Block 1 (Sofort produktiv):  █████░░░░░   4/8  ( 50%)
 Block 2 (Grundlagen):        ███████░░░   3/5  ( 60%)
 Block 3 (Bauen):             ░░░░░░░░░░   0/6  (  0%)
 Block 4 (Verteilen):         ░░░░░░░░░░   0/6  (  0%)
 Block 5 (Vertiefung):        ░░░░░░░░░░   0/5  (  0%)
 
-Gesamt:                      ████░░░░░░   6/30 ( 20%)
+Gesamt:                      ████░░░░░░   7/30 ( 23%)
 ```
 
 ---
