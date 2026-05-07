@@ -16,7 +16,7 @@ in Claude Code — was gibt es, wann setzt man es ein, wie ruft man es auf.
 Built-in CLI-Kommandos   →  /help, /clear, /compact, /status, …
                             Steuern die Claude Code Session selbst
 
-Built-in Skills          →  /simplify, /commit, /review-pr, …
+Built-in Skills          →  /simplify, /commit, /review, …
                             Erweitern Claude mit vorgefertigten Workflows
 ```
 
@@ -68,14 +68,17 @@ Typischer Einsatz:
 
 ---
 
-### `/commit` — Git Commit erstellen
+### Git Commit — per Prompt oder eigenem Command
 
 ```
-Zweck:  Analysiert staged Änderungen und erstellt eine aussagekräftige
-        Commit-Message nach Conventional Commits
+Kein Built-in Skill — aber zwei Wege:
 
-Aufruf: /commit
-        /commit -m "optionale Basis-Message"
+1. Direkt per Prompt:
+   "Erstelle einen Commit für die staged Änderungen"
+   "Schreibe eine Conventional Commits Message für diesen Diff"
+
+2. Als eigener Command .claude/commands/commit.md → /commit
+   (Details in LE 20)
 
 Tipps:
   - Staged Files vorher mit git add auswählen
@@ -85,13 +88,13 @@ Tipps:
 
 ---
 
-### `/review-pr` — Pull Request reviewen
+### `/review` — Pull Request reviewen
 
 ```
 Zweck:  Führt einen strukturierten Code Review des aktuellen PRs durch
 
-Aufruf: /review-pr
-        /review-pr 123        (spezifische PR-Nummer)
+Aufruf: /review
+        /review 123        (spezifische PR-Nummer)
 
 Was es prüft:
   - Logik und Korrektheit
@@ -155,7 +158,7 @@ git add src/
 
 ```bash
 # Pre-PR Checkliste
-/review-pr                                  # strukturierter Review
+/review                                  # strukturierter Review
 
 # Oder gezielt:
 "Prüfe ob alle neuen public Methoden in PaymentService.java getestet sind"
@@ -199,7 +202,7 @@ Details dazu in **LE 20 — Custom Slash Commands & Skill Templates**.
 │                                                              │
 │  Qualität:  /simplify   →  Code verbessern                  │
 │  Git:       /commit     →  Message generieren               │
-│  Review:    /review-pr  →  Strukturierter PR-Review         │
+│  Review:    /review  →  Strukturierter PR-Review         │
 │  Config:    /update-config  →  Hooks & Harness              │
 │  API:       /claude-api →  Anthropic SDK Hilfe              │
 │                                                              │

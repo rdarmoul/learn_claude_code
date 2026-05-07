@@ -16,7 +16,7 @@ Schulungsunterlagen für einen strukturierten, praxisorientierten Einstieg in Cl
 | 04 | Java täglich: Debugging & Testing | [le04_java_debugging_testing.md](le04_java_debugging_testing.md) | ✓ erledigt |
 | 05 | Legacy Code Migration | [le05_legacy_migration.md](le05_legacy_migration.md) | ✓ erledigt |
 | 07 | Java Workflow-Automatisierung — Wiederkehrende Aufgaben mit Claude | [le07_java_workflow_automatisierung.md](le07_java_workflow_automatisierung.md) | ✓ erledigt |
-| 08 | Der tägliche Werkzeugkasten — Built-in Skills & Slash Commands | [le08_taeglich_werkzeugkasten.md](le08_taeglich_werkzeugkasten.md) | offen |
+| 08 | Der tägliche Werkzeugkasten — Built-in Skills & Slash Commands | [le08_taeglich_werkzeugkasten.md](le08_taeglich_werkzeugkasten.md) | ✓ erledigt |
 
 ---
 
@@ -77,13 +77,13 @@ Schulungsunterlagen für einen strukturierten, praxisorientierten Einstieg in Cl
 ## Fortschritt
 
 ```
-Block 1 (Sofort produktiv):  ███████░░░   6/7  ( 86%)
+Block 1 (Sofort produktiv):  ██████████   7/7  (100%)
 Block 2 (Grundlagen):        ███████░░░   3/5  ( 60%)
 Block 3 (Bauen):             ░░░░░░░░░░   0/6  (  0%)
 Block 4 (Verteilen):         ░░░░░░░░░░   0/6  (  0%)
 Block 5 (Vertiefung):        ░░░░░░░░░░   0/5  (  0%)
 
-Gesamt:                      ████░░░░░░   9/29 ( 31%)
+Gesamt:                      ████░░░░░░  10/29 ( 34%)
 ```
 
 ---
