@@ -28,7 +28,7 @@ Schulungsunterlagen für einen strukturierten, praxisorientierten Einstieg in Cl
 | 09 | Tokens, Context Window & Prompts | [le07_tokens_context_prompts.md](le07_tokens_context_prompts.md) | ✓ erledigt |
 | 10 | Anthropic API — Messages, Models & Kosten | [le08_anthropic_api.md](le08_anthropic_api.md) | ✓ erledigt |
 | 11 | Transformer-Architektur & Attention | [le09_transformer_architektur.md](le09_transformer_architektur.md) | ✓ erledigt |
-| 12 | Prompt Engineering (CoT, Few-Shot, XML-Tags) | [le10_prompt_engineering.md](le10_prompt_engineering.md) | offen |
+| 12 | Prompt Engineering (CoT, Few-Shot, XML-Tags) | [le10_prompt_engineering.md](le10_prompt_engineering.md) | ✓ erledigt |
 | 13 | Halluzinationen & Safety | [le11_halluzinationen_safety.md](le11_halluzinationen_safety.md) | offen |
 
 ---
@@ -78,12 +78,12 @@ Schulungsunterlagen für einen strukturierten, praxisorientierten Einstieg in Cl
 
 ```
 Block 1 (Sofort produktiv):  ██████████   7/7  (100%)
-Block 2 (Grundlagen):        ███████░░░   3/5  ( 60%)
+Block 2 (Grundlagen):        ████████░░   4/5  ( 80%)
 Block 3 (Bauen):             ░░░░░░░░░░   0/6  (  0%)
 Block 4 (Verteilen):         ░░░░░░░░░░   0/6  (  0%)
 Block 5 (Vertiefung):        ░░░░░░░░░░   0/5  (  0%)
 
-Gesamt:                      ████░░░░░░  10/29 ( 34%)
+Gesamt:                      ████░░░░░░  11/29 ( 38%)
 ```
 
 ---

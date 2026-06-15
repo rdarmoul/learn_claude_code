@@ -105,6 +105,31 @@ Prompt:
    4. Was sind die Risiken deiner Empfehlung?"
 ```
 
+### Was tun, wenn ich selbst keine gute Schritt-für-Schritt-Anleitung kenne?
+
+Häufiges Problem: Du weißt was du erreichen willst, aber nicht wie man systematisch vorgeht.
+Lösung: Claude die Struktur entwickeln lassen — zweistufig.
+
+```
+SCHRITT 1 — Plan anfragen:
+  "Ich möchte unsere OrderService-Klasse auf Thread-Safety prüfen.
+   Welche Schritte sollte ich dabei systematisch durchgehen?"
+
+  → Claude liefert einen Analyseplan. Kurz bewerten, dann weiter.
+
+SCHRITT 2 — Plan anwenden:
+  "Gut. Wende diese Schritte jetzt auf folgenden Code an: [Code]"
+```
+
+Kurzform für den Alltag (ein Prompt, zwei Phasen):
+```
+  "Analysiere [X]. Entwickle zuerst einen systematischen
+   Analyseplan, dann führe ihn aus."
+```
+
+Kernprinzip: Claude als Experten befragen, nicht als Ausführer anweisen.
+Du musst wissen WAS du erreichen willst — nicht WIE man dahin kommt.
+
 ---
 
 ## 3. Few-Shot Prompting (15 min)
