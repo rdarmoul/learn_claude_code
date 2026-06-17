@@ -38,7 +38,7 @@ Schulungsunterlagen für einen strukturierten, praxisorientierten Einstieg in Cl
 
 | LE  | Thema | Datei | Status |
 |-----|-------|-------|--------|
-| 14 | Tool Use & Function Calling (Deep Dive) | [le12_tool_use_deep_dive.md](le12_tool_use_deep_dive.md) | offen |
+| 14 | Tool Use & Function Calling (Deep Dive) | [le12_tool_use_deep_dive.md](le12_tool_use_deep_dive.md) | ✓ erledigt |
 | 15 | Agent Loop & ReAct Pattern | [le13_agent_loop_react.md](le13_agent_loop_react.md) | offen |
 | 16 | RAG & Embeddings | [le14_rag_embeddings.md](le14_rag_embeddings.md) | offen |
 | 17 | Memory-Systeme | [le15_memory_systeme.md](le15_memory_systeme.md) | offen |
@@ -79,11 +79,11 @@ Schulungsunterlagen für einen strukturierten, praxisorientierten Einstieg in Cl
 ```
 Block 1 (Sofort produktiv):  ██████████   7/7  (100%)
 Block 2 (Grundlagen):        ██████████   5/5  (100%)
-Block 3 (Bauen):             ░░░░░░░░░░   0/6  (  0%)
+Block 3 (Bauen):             █░░░░░░░░░   1/6  ( 17%)
 Block 4 (Verteilen):         ░░░░░░░░░░   0/6  (  0%)
 Block 5 (Vertiefung):        ░░░░░░░░░░   0/5  (  0%)
 
-Gesamt:                      ████░░░░░░  12/29 ( 41%)
+Gesamt:                      ████░░░░░░  13/29 ( 45%)
 ```
 
 ---
