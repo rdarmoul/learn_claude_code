@@ -25,11 +25,11 @@ Schulungsunterlagen für einen strukturierten, praxisorientierten Einstieg in Cl
 
 | LE  | Thema | Datei | Status |
 |-----|-------|-------|--------|
-| 09 | Tokens, Context Window & Prompts | [le07_tokens_context_prompts.md](le07_tokens_context_prompts.md) | ✓ erledigt |
-| 10 | Anthropic API — Messages, Models & Kosten | [le08_anthropic_api.md](le08_anthropic_api.md) | ✓ erledigt |
-| 11 | Transformer-Architektur & Attention | [le09_transformer_architektur.md](le09_transformer_architektur.md) | ✓ erledigt |
-| 12 | Prompt Engineering (CoT, Few-Shot, XML-Tags) | [le10_prompt_engineering.md](le10_prompt_engineering.md) | ✓ erledigt |
-| 13 | Halluzinationen & Safety | [le11_halluzinationen_safety.md](le11_halluzinationen_safety.md) | ✓ erledigt |
+| 09 | Tokens, Context Window & Prompts | [le09_tokens_context_prompts.md](le09_tokens_context_prompts.md) | ✓ erledigt |
+| 10 | Anthropic API — Messages, Models & Kosten | [le10_anthropic_api.md](le10_anthropic_api.md) | ✓ erledigt |
+| 11 | Transformer-Architektur & Attention | [le11_transformer_architektur.md](le11_transformer_architektur.md) | ✓ erledigt |
+| 12 | Prompt Engineering (CoT, Few-Shot, XML-Tags) | [le12_prompt_engineering.md](le12_prompt_engineering.md) | ✓ erledigt |
+| 13 | Halluzinationen & Safety | [le13_halluzinationen_safety.md](le13_halluzinationen_safety.md) | ✓ erledigt |
 
 ---
 
@@ -38,12 +38,12 @@ Schulungsunterlagen für einen strukturierten, praxisorientierten Einstieg in Cl
 
 | LE  | Thema | Datei | Status |
 |-----|-------|-------|--------|
-| 14 | Tool Use & Function Calling (Deep Dive) | [le12_tool_use_deep_dive.md](le12_tool_use_deep_dive.md) | ✓ erledigt |
-| 15 | Agent Loop & ReAct Pattern | [le13_agent_loop_react.md](le13_agent_loop_react.md) | offen |
-| 16 | RAG & Embeddings | [le14_rag_embeddings.md](le14_rag_embeddings.md) | offen |
-| 17 | Memory-Systeme | [le15_memory_systeme.md](le15_memory_systeme.md) | offen |
-| 18 | CI/CD Integration | [le16_cicd_integration.md](le16_cicd_integration.md) | offen |
-| 19 | Claude API für eigene Produkte (Streaming, Caching) | [le17_claude_api_produkte.md](le17_claude_api_produkte.md) | offen |
+| 14 | Tool Use & Function Calling (Deep Dive) | [le14_tool_use_deep_dive.md](le14_tool_use_deep_dive.md) | ✓ erledigt |
+| 15 | Agent Loop & ReAct Pattern | [le15_agent_loop_react.md](le15_agent_loop_react.md) | offen |
+| 16 | RAG & Embeddings | [le16_rag_embeddings.md](le16_rag_embeddings.md) | offen |
+| 17 | Memory-Systeme | [le17_memory_systeme.md](le17_memory_systeme.md) | offen |
+| 18 | CI/CD Integration | [le18_cicd_integration.md](le18_cicd_integration.md) | offen |
+| 19 | Claude API für eigene Produkte (Streaming, Caching) | [le19_claude_api_produkte.md](le19_claude_api_produkte.md) | offen |
 
 ---
 
@@ -52,12 +52,12 @@ Schulungsunterlagen für einen strukturierten, praxisorientierten Einstieg in Cl
 
 | LE  | Thema | Datei | Status |
 |-----|-------|-------|--------|
-| 20 | Custom Slash Commands & Skill Templates | [le18_skills_slash_commands.md](le18_skills_slash_commands.md) | offen |
-| 21 | Harness Engineering — settings.json, Hooks & Automatisierung | [le19_harness_engineering.md](le19_harness_engineering.md) | offen |
-| 22 | MCP — Tool-Server bauen & verteilen | [le20_mcp_server.md](le20_mcp_server.md) | offen |
-| 23 | Zentrale AI-Infrastruktur für Teams & Unternehmen | [le21_team_ai_infrastruktur.md](le21_team_ai_infrastruktur.md) | offen |
-| 24 | Production Deployment: Kosten, Latenz, Monitoring | [le22_production_deployment.md](le22_production_deployment.md) | offen |
-| 25 | Architektur-Muster: RAG + Memory + Multi-Agent | [le23_architektur_muster.md](le23_architektur_muster.md) | offen |
+| 20 | Custom Slash Commands & Skill Templates | [le20_skills_slash_commands.md](le20_skills_slash_commands.md) | offen |
+| 21 | Harness Engineering — settings.json, Hooks & Automatisierung | [le21_harness_engineering.md](le21_harness_engineering.md) | offen |
+| 22 | MCP — Tool-Server bauen & verteilen | [le22_mcp_server.md](le22_mcp_server.md) | offen |
+| 23 | Zentrale AI-Infrastruktur für Teams & Unternehmen | [le23_team_ai_infrastruktur.md](le23_team_ai_infrastruktur.md) | offen |
+| 24 | Production Deployment: Kosten, Latenz, Monitoring | [le24_production_deployment.md](le24_production_deployment.md) | offen |
+| 25 | Architektur-Muster: RAG + Memory + Multi-Agent | [le25_architektur_muster.md](le25_architektur_muster.md) | offen |
 
 ---
 
@@ -66,11 +66,11 @@ Schulungsunterlagen für einen strukturierten, praxisorientierten Einstieg in Cl
 
 | LE  | Thema | Datei | Status |
 |-----|-------|-------|--------|
-| 26 | Multi-Agent Systeme vertieft | [le24_multi_agent_vertieft.md](le24_multi_agent_vertieft.md) | offen |
-| 27 | RAG vertieft (Chunking, Reranking, Evaluation) | [le25_rag_vertieft.md](le25_rag_vertieft.md) | offen |
-| 28 | Fine-tuning: Wann und Wie | [le26_fine_tuning.md](le26_fine_tuning.md) | offen |
-| 29 | Claude Code vs. GitHub Copilot — Tiefgehender CLI-Vergleich | [le27_claude_vs_copilot.md](le27_claude_vs_copilot.md) | offen |
-| 30 | Wiederholung & nächste Schritte | [le28_wiederholung.md](le28_wiederholung.md) | offen |
+| 26 | Multi-Agent Systeme vertieft | [le26_multi_agent_vertieft.md](le26_multi_agent_vertieft.md) | offen |
+| 27 | RAG vertieft (Chunking, Reranking, Evaluation) | [le27_rag_vertieft.md](le27_rag_vertieft.md) | offen |
+| 28 | Fine-tuning: Wann und Wie | [le28_fine_tuning.md](le28_fine_tuning.md) | offen |
+| 29 | Claude Code vs. GitHub Copilot — Tiefgehender CLI-Vergleich | [le29_claude_vs_copilot.md](le29_claude_vs_copilot.md) | offen |
+| 30 | Wiederholung & nächste Schritte | [le30_wiederholung.md](le30_wiederholung.md) | offen |
 
 ---
 
